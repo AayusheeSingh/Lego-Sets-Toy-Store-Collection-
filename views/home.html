@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Collection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="bg-blue-500 p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <a class="text-white text-2xl font-semibold" href="/">Lego Collection</a>
+            <div class="hidden sm:flex space-x-4">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <details>
+                    <summary>Theme</summary>
+                    <ul class="dropdown-menu">
+                        <li><a href="/lego/sets?theme=Technic">Technic</a></li>
+                        <li><a href="/lego/sets?theme=Creator">Creator</a></li>
+                        <li><a href="/lego/sets?theme=Town">Town</a></li>
+                        
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto py-8">
+        <!-- Hero section with a link to Lego sets -->
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Explore the Lego Collection</h1>
+            <a class="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" href="/lego/sets">View Lego Sets</a>
+        </div>
+
+        <!--  Display of Three Lego Sets  -->
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8 mx-auto">            
+            <!-- Lego Set 1  -->
+            <div class="card bg-white p-4 rounded shadow-md">
+                <h2 class="text-xl font-semibold">Gears</h2>
+                <img src="https://images.brickset.com/sets/images/001-1.jpg?201401081143" alt="Lego Set 1" class="w-full h-40 object-cover mb-2">
+                <p class="text-gray-700 mb-4">This set was released in America (USA/CAN) by Samsonite in 1965. It was re-released in 1969 as an educational set (322-4). It was never released in Europe.</p>
+                <a class="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" href="/lego/sets/001-1">View Set</a>
+            </div>
+
+            <!-- Lego Set 2  -->
+            <div class="card bg-white p-4 rounded shadow-md">
+                <h2 class="text-xl font-semibold">Ninjago: Build Your Own Adventure</h2>
+                <img src="https://cdn.rebrickable.com/media/sets/0241187567-1.jpg" alt="Lego Set 2" class="w-full h-40 object-cover mb-2">
+                <p class="text-gray-700 mb-4">Written by Scarlett O'Hara
+                Hardcover: 80 pages
+                Publisher: Dorling Kindersley (August 2015)
+                Language: English
+                ISBN-10: 0241187567
+                ISBN-13: 9780241187562
+                Parts supplied in a polybag numbered 11909</p>
+                <a class="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" href="/lego/sets/0241187567-1">View Set</a>
+            </div>
+
+            <!-- Lego Set 3  -->
+            <div class="card bg-white p-4 rounded shadow-md">
+                <h2 class="text-xl font-semibold">The Majestic Horse</h2>
+                <img src="https://cdn.rebrickable.com/media/sets/010423-1.jpg" alt="Lego Set 3" class="w-full h-48 object-cover mb-2">
+                <p class="text-gray-700 mb-4">Designed by previous 2017 Lego Masters UK winners Nathan Dias and Steve Guinness.
+                    Given to select members of the Recognised Lego Fan Media group for an April fools prank in 2023, only around 10 are known to exist.
+                    Although pictures show box art for this set, it was received in a clear plastic bag in a standard box. Building instructions were locked with a password and unprintable, so it will likely never be available to the public.
+                    Some sets were received with 4 red 25269, and some had 4 dark red 25269.</p>
+                <a class="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" href="/lego/sets/010423-1">View Set</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
