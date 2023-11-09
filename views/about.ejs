@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Collection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <%- include('partials/navbar', { page: '/about' }) %>
+    <div class="container mx-auto">
+        <div class="hero text-center py-8">
+            <h1 class="text-4xl font-bold text-gray-800">About Me</h1>
+            <p class="text-gray-600">All about me...</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Left column with your image -->
+            <div class="border-2">
+                <img src="https://educationsnapshots.com/wp-content/uploads/sites/4/2022/01/seneca-college-newnham-campus-food-hall-3-700x467-compact.jpg" alt="My Image" class="w-full rounded-lg" style="max-width: 100%;max-height:100%;"/>
+            </div>
+            <!-- Right column with a short blurb about yourself -->
+            <div class="border-2 p-4">
+                <p class="mb-2">Name: Aayushee Singh</p>
+                <p class="mb-2">Email: asingh1221@myseneca.ca</p>
+                <p class="mb-2">Student Number: 173927211</p>
+                <p class="mb-2">Section: NBB</p>
+                <p class="mb-2">Course: WEB322</p>
+                <p class="mb-2">Program: CPP (Computer Programming Principles)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

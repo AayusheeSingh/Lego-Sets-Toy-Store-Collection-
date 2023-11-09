@@ -1,16 +1,16 @@
-/******************************************************************************** *  WEB322 – Assignment 03 
-*  
-*	I declare that this assignment is my own work in accordance with Seneca's *  Academic Integrity Policy: 
-*  
-*	hRps://www.senecacollege.ca/about/policies/academic-integrity-policy.html 
-*  
-*	Name: __Aayushee Singh____ Student ID: __173927211____ Date: _27th October,2023__ 
+/********************************************************************************
+* WEB322 – Assignment 04
 * 
-*	Published URL: _______git@github.com:AayusheeSingh/Assignment-3.git________ 
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
 * 
-********************************************************************************/ 
-
-
+* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+* 
+* Name: Aayushee Singh        Student ID: __173927211___ Date: __08-11-2023____________
+*
+* Published URL: ___________________________________________________________
+*
+********************************************************************************/
 
 
 const express = require('express');
@@ -19,6 +19,8 @@ const legoData = require('./modules/legoSets');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.set('view engine', 'ejs');
+
 legoData.initialize().then(function() {
   app.listen(port, function() {
     console.log('Server is running on port ' + port);
@@ -26,20 +28,21 @@ legoData.initialize().then(function() {
 });
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/views/home.html');
+  res.render("home"); // Render the "home.ejs" view
 });
 
 app.get('/about', function(req, res) {
-  res.sendFile(__dirname + '/views/about.html');
+  res.render("about"); // Render the "about.ejs" view
 });
 
+// Changes start here
 app.get('/lego/sets', function(req, res) {
   const theme = req.query.theme; // Get the theme from the query parameter
   if (theme) {
     // Handle sets by theme
     legoData.getSetsByTheme(theme)
       .then(function(sets) {
-        res.json(sets);
+        res.render("sets", { sets: sets }); // Render the "sets.ejs" view with the sets data
       })
       .catch(function(error) {
         res.status(500).send(error);
@@ -48,29 +51,31 @@ app.get('/lego/sets', function(req, res) {
     // Handle all sets
     legoData.getAllSets()
       .then(function(sets) {
-        res.json(sets);
+        res.render("sets", { sets: sets }); // Render the "sets.ejs" view with the sets data
       })
       .catch(function(error) {
         res.status(500).send(error);
       });
   }
 });
+// Changes end here
 
-app.get('/lego/sets/:set_num', function(req, res) {
-  const setNum = req.params.set_num; // Get the set number from the URL
+app.get('/lego/sets/:set_num', function (req, res) {
+  const setNum = req.params.set_num;
   legoData.getSetByNum(setNum)
-    .then(function(set) {
-      res.json(set);
-    })
-    .catch(function(error) {
-      res.status(500).send(error);
-    });
+      .then(function (set) {
+          res.render("set", { set: set }); // Render the "set.ejs" view with the set data
+      })
+      .catch(function (error) {
+          res.status(500).send(error);
+      });
 });
+
 
 app.use(express.static('public'));
 
 app.use(function(req, res, next) {
-  res.status(404).sendFile(__dirname + '/views/404.html');
+  res.status(404).render("404", { message: "I'm sorry, we're unable to find what you're looking for" });
 });
 
 
