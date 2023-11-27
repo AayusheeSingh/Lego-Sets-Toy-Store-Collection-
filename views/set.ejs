@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= set.name %></title>
-    <!-- Add your custom styles directly here -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7fafc;
             color: #1a202c;
             line-height: 1.6;
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            margin: 0; 
+            padding: 0; 
         }
 
         .container {
@@ -21,7 +20,7 @@
         }
 
         .header {
-            background-color: #4299e1; /* Updated to blue color */
+            background-color: #4299e1; 
             color: #ffffff;
             padding: 10px;
             text-align: center;
@@ -73,6 +72,20 @@
         .back-button:hover {
             background-color: #2c5282;
         }
+
+        .edit-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4299e1;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-button:hover {
+            background-color: #d69e2e;
+        }
     </style>
 </head>
 <body>
@@ -87,15 +100,15 @@
             <div class="details-container">
                 <h1><%= set.name %></h1>
                 <p><strong>Name:</strong> <%= set.name %></p>
-
                 <p><strong>Year:</strong> <%= set.year %></p>
-                <p><strong>Theme:</strong> <a href="/lego/sets?theme=<%= set.theme %>"><%= set.theme %></a></p>
+                <p><strong>Theme:</strong> <a href="/lego/sets?theme=<%= set.theme %>"><%= set.Theme.name %></a></p>
                 <p><strong>Number of Parts:</strong> <%= set.num_parts %></p>
                 <div class="mt-8 text-center">
                     <h3 class="text-xl font-semibold">Random Quote</h3>
                     <p id="quote">Loading a random quote...</p>
                 </div>
                 <a href="#" onclick="history.back(); return false;" class="back-button mt-4">Back</a>
+                <a href="/lego/editSet/<%= set.set_num %>" class="edit-button mt-4 bg-yellow-500 text-white px-4 py-2 inline-block rounded">Edit</a>
             </div>
         </div>
     </div>

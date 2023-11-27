@@ -12,12 +12,10 @@
     <div class="container mx-auto">
         <div class="hero text-center py-8">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">Collection</h1>
-            <!-- Add hard-coded links to filter the table -->
             <div class="mb-4 flex justify-center">
                 <a class="inline-block px-4 py-2 mx-2 bg-blue-500 text-white rounded-full" href="/lego/sets?theme=Technic">Technic</a>
                 <a class="inline-block px-4 py-2 mx-2 bg-blue-500 text-white rounded-full" href="/lego/sets?theme=Creator">Creator</a>
                 <a class="inline-block px-4 py-2 mx-2 bg-blue-500 text-white rounded-full" href="/lego/sets?theme=Town">Town</a>
-                <!-- Add more links for other themes as needed -->
             </div>
         </div>
         <table class="table-auto w-full">
@@ -36,7 +34,7 @@
                     <tr>
                         <td class="px-4 py-2"><img src="<%= set.img_url %>" alt="<%= set.name %>" class="h-12 w-12"></td>
                         <td class="px-4 py-2"><%= set.name %></td>
-                        <td class="px-4 py-2"><a href="/lego/sets?theme=<%= set.theme %>" class="text-blue-500 hover:underline"><%= set.theme %></a></td>
+                        <td class="px-4 py-2"><a href="/lego/sets?theme=<%= set.theme %>" class="text-blue-500 hover:underline"><%= set.Theme.name %></a></td>
                         <td class="px-4 py-2"><%= set.year %></td>
                         <td class="px-4 py-2"><%= set.num_parts %></td>
                         <td class="px-4 py-2"><a href="/lego/sets/<%= set.set_num %>" class="py-2 px-4 bg-blue-500 text-white rounded-full">Details</a></td>
