@@ -8,8 +8,7 @@
 * 
 * Name: Aayushee Singh        Student ID:   173927211       Date: 27-11-2023
 *
-* Published URL: https://eagle-suspenders.cyclic.app
-*
+* Published URL: https://eagle-suspenders.cyclic.app/
 **************************************************************************************************************/
 
 const express = require('express');
