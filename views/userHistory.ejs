@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User History</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <% include('partials/navbar', { page: '/userHistory' }) %>
+
+    <div class="container mx-auto p-4">
+        <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">User History</h1>
+
+        <div class="max-w-md mx-auto bg-white p-8 rounded shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">User Details</h2>
+
+            <p class="mb-4"><strong>User Name:</strong> <%= session.user.userName %></p>
+            <p class="mb-4"><strong>Email:</strong> <%= session.user.email %></p>
+
+            <h2 class="text-2xl font-semibold mb-4">Login History</h2>
+
+            <% if (session.user.loginHistory && session.user.loginHistory.length > 0) { %>
+                <ul>
+                    <% session.user.loginHistory.forEach(entry => { %>
+                        <li>
+                            <p><strong>Date/Time:</strong> <%= entry.dateTime %></p>
+                            <p><strong>User Agent:</strong> <%= entry.userAgent %></p>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No login history available.</p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
